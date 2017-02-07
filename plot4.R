@@ -38,9 +38,7 @@ df$Date_time <- strptime(paste0(df$Date_time, df$Time), "%d/%m/%Y%H:%M:%S", tz =
 df$Time <- NULL
 for (i in 2:8) df[,i] <- as.numeric(df[,i])
 
-par(mfrow = c(2, 2), mar = c(4, 4, 2, 1))
-par(mfrow = c(2, 2), mar = c(5, 4, 2, 1))
-par(mfrow = c(2, 2), mar = c(5, 5, 3, 1))
+par(mfrow = c(2, 2), mar = c(5, 5, 1, 1))
 with(
     df,
     plot(
@@ -111,3 +109,4 @@ with(
 
 dev.copy(png, file = "plot4.png")
 dev.off()
+
